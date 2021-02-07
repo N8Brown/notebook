@@ -1,0 +1,17 @@
+{% extends "programmer_notebooks/base.html" %}
+
+{% block content %}
+
+    <p>Topic</p>
+
+    <ul>
+        {% for topic in topics %}
+            <li>
+                <a href="{% url 'programmer_notebooks:topic' topic.id %}">{{ topic }}</a>
+            </li>
+        {% empty %}
+            <li>No topics have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
